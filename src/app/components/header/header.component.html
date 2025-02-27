@@ -5,10 +5,12 @@
     'bg-white shadow-md text-black': isScrolled
   }"
 >
-  <a href="" class="text-3xl font-bold">Benedict</a>
+  <a (click)="scrollToSection('home')" class="text-3xl font-bold cursor-pointer"
+    >Benedict</a
+  >
 
   <div class="hidden md:flex gap-5">
-    <a href="" class="text-xl cursor-pointer">Home</a>
+    <a (click)="scrollToSection('home')" class="text-xl cursor-pointer">Home</a>
     <a (click)="scrollToSection('about')" class="text-xl cursor-pointer"
       >About</a
     >
@@ -21,7 +23,11 @@
   </div>
 
   <!-- Mobile Menu Button -->
-  <button class="md:hidden text-3xl" (click)="isMenuOpen = !isMenuOpen">
+  <button
+    class="md:hidden text-3xl"
+    [ngClass]="{ 'text-white': !isScrolled, 'text-black': isScrolled }"
+    (click)="isMenuOpen = !isMenuOpen"
+  >
     ☰
   </button>
 
@@ -30,9 +36,25 @@
     *ngIf="isMenuOpen"
     class="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center gap-4 py-4 md:hidden"
   >
-    <a href="" class="text-xl">Home</a>
-    <a href="" class="text-xl">About</a>
-    <a href="" class="text-xl">Services</a>
-    <a href="" class="text-xl">Contact</a>
+    <a
+      (click)="scrollToSection('home'); isMenuOpen = false"
+      class="text-xl cursor-pointer text-black hover:text-gray-600"
+      >Home</a
+    >
+    <a
+      (click)="scrollToSection('about'); isMenuOpen = false"
+      class="text-xl cursor-pointer text-black hover:text-gray-600"
+      >About</a
+    >
+    <a
+      (click)="scrollToSection('services'); isMenuOpen = false"
+      class="text-xl cursor-pointer text-black hover:text-gray-600"
+      >Services</a
+    >
+    <a
+      (click)="scrollToSection('contact'); isMenuOpen = false"
+      class="text-xl cursor-pointer text-black hover:text-gray-600"
+      >Contact</a
+    >
   </div>
 </nav>
