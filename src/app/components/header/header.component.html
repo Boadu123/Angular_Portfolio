@@ -8,10 +8,16 @@
   <a href="" class="text-3xl font-bold">Benedict</a>
 
   <div class="hidden md:flex gap-5">
-    <a href="" class="text-xl">Home</a>
-    <a href="" class="text-xl">About</a>
-    <a href="" class="text-xl">Services</a>
-    <a href="" class="text-xl">Contact</a>
+    <a href="" class="text-xl cursor-pointer">Home</a>
+    <a (click)="scrollToSection('about')" class="text-xl cursor-pointer"
+      >About</a
+    >
+    <a (click)="scrollToSection('services')" class="text-xl cursor-pointer"
+      >Services</a
+    >
+    <a (click)="scrollToSection('contact')" class="text-xl cursor-pointer"
+      >Contact</a
+    >
   </div>
 
   <!-- Mobile Menu Button -->

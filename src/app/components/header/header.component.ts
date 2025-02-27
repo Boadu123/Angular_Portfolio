@@ -15,4 +15,11 @@ export class HeaderComponent {
   onWindowScroll() {
     this.isScrolled = window.scrollY > 50;
   }
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
