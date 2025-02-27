@@ -1,0 +1,32 @@
+<nav
+  class="fixed top-0 left-1/2 transform -translate-x-1/2 w-4/5 z-50 flex justify-between items-center px-10 py-4 transition-all duration-300 rounded-lg"
+  [ngClass]="{
+    'bg-transparent text-white': !isScrolled,
+    'bg-white shadow-md text-black': isScrolled
+  }"
+>
+  <a href="" class="text-3xl font-bold">Benedict</a>
+
+  <div class="hidden md:flex gap-5">
+    <a href="" class="text-xl">Home</a>
+    <a href="" class="text-xl">About</a>
+    <a href="" class="text-xl">Services</a>
+    <a href="" class="text-xl">Contact</a>
+  </div>
+
+  <!-- Mobile Menu Button -->
+  <button class="md:hidden text-3xl" (click)="isMenuOpen = !isMenuOpen">
+    ☰
+  </button>
+
+  <!-- Mobile Menu -->
+  <div
+    *ngIf="isMenuOpen"
+    class="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center gap-4 py-4 md:hidden"
+  >
+    <a href="" class="text-xl">Home</a>
+    <a href="" class="text-xl">About</a>
+    <a href="" class="text-xl">Services</a>
+    <a href="" class="text-xl">Contact</a>
+  </div>
+</nav>
